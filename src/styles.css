@@ -1,26 +1,336 @@
+:root {
+  --primary-color: #4a90d9;
+  --primary-hover: #357abd;
+  --primary-active: #2a5f8f;
+  --success-color: #22c55e;
+  --success-hover: #16a34a;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #fafafa;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .main {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: var(--card-bg);
+  padding: 40px 50px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  min-width: 300px;
+}
+
+.main h3 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.main p {
+  color: var(--text-secondary);
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+#main-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+#main-button:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+#main-button:active:not(:disabled) {
+  background: var(--primary-active);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+#main-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+#main-button.active {
+  background: var(--success-color);
+}
+
+#main-button.active:hover:not(:disabled) {
+  background: var(--success-hover);
+}
+
+#device-name {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+#device-name.connected {
+  background: #dcfce7;
+  color: #166534;
 }
 
 .misc {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
-  margin: 10px;
+  right: 0;
+  padding: 16px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.misc p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.misc a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.misc a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#install-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 12px;
+}
+
+#install-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .unsupported {
   display: none;
+}
+
+.unsupported h3 {
+  color: var(--danger-color);
+}
+
+/* Dialog Styles */
+dialog {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+  padding: 0;
+  max-width: 400px;
+  width: 90%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+dialog header {
+  background: var(--danger-color);
+  color: white;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+dialog form {
+  padding: 24px;
+}
+
+dialog p {
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+dialog pre {
+  background: #f3f4f6;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+dialog pre code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: var(--text-secondary);
+}
+
+dialog menu {
+  margin: 0;
+  padding: 0;
+}
+
+dialog button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+dialog button:hover {
+  background: var(--primary-hover);
+}
+
+/* Animation for button */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(74, 144, 217, 0);
+  }
+}
+
+#main-button:not(:disabled):not(.active) {
+  animation: pulse 2s infinite;
+}
+
+#main-button:hover:not(:disabled) {
+  animation: none;
+}
+
+/* Loading state animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#main-button:disabled::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+/* App Title */
+.app-title {
+  font-size: 24px;
+  margin-bottom: 24px !important;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Support Button */
+.support-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.support-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .main {
+    padding: 30px 25px;
+    min-width: 280px;
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+
+  #main-button {
+    padding: 14px 36px;
+    font-size: 16px;
+  }
+
+  .misc {
+    padding: 12px;
+  }
+
+  .misc p {
+    font-size: 12px;
+  }
+
+  dialog {
+    max-width: 90%;
+  }
 }
 

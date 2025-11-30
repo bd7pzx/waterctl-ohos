@@ -23,16 +23,21 @@ function updateUi(stage: "pending" | "ok" | "standby") {
     case "pending":
       mainButton.innerText = "请稍候";
       mainButton.disabled = true;
+      mainButton.classList.remove("active");
       deviceName.innerText = "已连接：" + bluetoothDevice.name;
+      deviceName.classList.add("connected");
       break;
     case "ok":
       mainButton.innerText = "结束";
       mainButton.disabled = false;
+      mainButton.classList.add("active");
       break;
     case "standby":
       mainButton.innerText = "开启";
       mainButton.disabled = false;
+      mainButton.classList.remove("active");
       deviceName.innerText = "未连接";
+      deviceName.classList.remove("connected");
       break;
   }
 }
