@@ -285,8 +285,9 @@ dialog button:hover {
   margin-bottom: 24px !important;
   background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Support Button */
