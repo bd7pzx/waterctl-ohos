@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Waterctl"
+    },
+    {
+      "name": "permission_bluetooth_reason",
+      "value": "需要蓝牙连接与控制水控器设备"
+    },
+    {
+      "name": "permission_discover_bluetooth_reason",
+      "value": "需要扫描附近蓝牙设备"
+    },
+    {
+      "name": "permission_location_reason",
+      "value": "蓝牙扫描功能需要定位权限"
+    },
+    {
+      "name": "water_live_form_desc",
+      "value": "水控器实况窗"
+    }
+  ]
+}

@@ -29,3 +29,5 @@ wrangler.toml
 
 # deputy
 /src/deputy.wasm
+
+.hvigor/
