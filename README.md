@@ -1,6 +1,9 @@
 # 原项目为[celesWuff/waterctl](https://github.com/celesWuff/waterctl)
 
 # 完全Vibe Coding，请自行修bug
+
+已知问题：开屏会闪过一个烧鹅腿，原因是我想拿这个做icon但是没成功，先放着，有空再修
+
 ---
 
 # Waterctl (HarmonyOS 6)
