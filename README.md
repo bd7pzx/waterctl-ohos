@@ -1,7 +1,5 @@
-# 原项目为[celesWuff/waterctl](https://github.com/celesWuff/waterctl)
+<img width="1746" height="488" alt="image" src="https://github.com/user-attachments/assets/d4a33d70-c03f-411b-846d-ebe6b977a2b2" />
 
-# 完全Vibe Coding，请自行修bug
----
 
 # Waterctl (HarmonyOS 6)
 
@@ -9,12 +7,12 @@
 
 ## 功能
 
-- 扫描并展示蓝牙设备（可用于选择 `Water*` 设备）
+- 扫描并展示蓝牙设备
 - 列表显示设备名、MAC、RSSI 与信号强度图形
 - 连接/断开水控器
 - 开水/关水控制
 - 本地保存每次用水时长记录
-- ~~支持 `liveForm` 扩展能力（实况窗链路）~~不知道为什么做不出来，懒得搞了，但是代码还在
+- 实况窗不知道为什么做不出来，懒得搞了，但是代码还在
 
 ## 项目结构
 
@@ -61,6 +59,4 @@
 
 ---
 
-免责申明：这玩意是我下课之后一时兴起让agent写的石山项目，能用，但是出了问题不要找我，去找Sam Altman
-
-## 请去支持原项目！
+免责申明：这玩意是我闲着没事时兴起写的，能用，但是出了问题不要找我，去找Sam Altman
