@@ -1,4 +1,4 @@
-<img width="783" height="250" alt="WaterctlOHOS_ba-style@logo bluearchive cc" src="https://github.com/user-attachments/assets/f6861dbb-0f69-40a8-80a4-85fe7a256ee3" />
+<img width="1746" height="488" alt="image" src="https://github.com/user-attachments/assets/d4a33d70-c03f-411b-846d-ebe6b977a2b2" />
 
 
 # Waterctl (HarmonyOS 6)
