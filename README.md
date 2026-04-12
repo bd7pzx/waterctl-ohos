@@ -1,9 +1,3 @@
-# 原项目为[celesWuff/waterctl](https://github.com/celesWuff/waterctl)
-
-# 完全Vibe Coding，请自行修bug
-
-
----
 
 # Waterctl (HarmonyOS 6)
 
@@ -63,6 +57,4 @@
 
 ---
 
-免责申明：这玩意是我下课之后一时兴起让agent写的石山项目，能用，但是出了问题不要找我，去找Sam Altman
-
-## 请去支持原项目！
+免责申明：这玩意是我闲着没事时兴起写的，能用，但是出了问题不要找我，去找Sam Altman
